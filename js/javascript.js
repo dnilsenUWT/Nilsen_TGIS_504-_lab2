@@ -4,8 +4,8 @@ swal("Welcome to New Map Directions!", "Begin by slecting anywhere on the map to
 
 swal({
   title: "Welcome to New Map Directions!",
-  text: "Begin by slecting anywhere on the map to set your Starting Point or destination. To enter address use the routing box in the upper right corner.",
-  button: "Let's begin!",
+  text: "Begin by selecting anywhere on the map to set your Starting Point or Destination. To enter address, use the Routing Box in the upper right corner.",
+  button: "Let's Begin!",
 });
 
 var map = L.map('map').setView([47.25, -122.44], 11);
