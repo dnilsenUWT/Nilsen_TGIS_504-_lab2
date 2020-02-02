@@ -1,3 +1,13 @@
+// alert("Welcome to New Map Directions! Begin by slecting anywhere on the map to set your <b>starting point</b> or destination. To enter address use the routing box in the upper right corner. Let begin!");
+
+swal("Welcome to New Map Directions!", "Begin by slecting anywhere on the map to set your Starting Point or destination. To enter address use the routing box in the upper right corner. Let's begin!");
+
+swal({
+  title: "Welcome to New Map Directions!",
+  text: "Begin by slecting anywhere on the map to set your Starting Point or destination. To enter address use the routing box in the upper right corner.",
+  button: "Let's begin!",
+});
+
 var map = L.map('map').setView([47.25, -122.44], 11);
 
 var light = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
@@ -45,8 +55,8 @@ function createButton(label, container) {
 
 map.on('click', function(e) {
     var container = L.DomUtil.create('div'),
-        startBtn = createButton('Start from this location', container),
-        destBtn = createButton('Go to this location', container);
+        startBtn = createButton('Start Here', container),
+        destBtn = createButton('Go Here', container);
 
     L.popup()
         .setContent(container)
@@ -73,6 +83,8 @@ map.on('click', function(e) {
 };
 
 L.control.layers(baseLayers).addTo(map);
+
+
 
 L.easyButton("fas fa-crosshairs", function(btn, map){
     map.locate({setView: true, maxZoom: 16});
